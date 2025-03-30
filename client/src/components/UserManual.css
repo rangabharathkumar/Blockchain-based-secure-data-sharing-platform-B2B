@@ -1,0 +1,155 @@
+/* 🌟 Base Styling */
+.user-manual {
+  min-height: calc(100vh - 80px);
+  padding: 0;
+  background: linear-gradient(135deg, #1a1b2f 0%, #0d0e1c 100%);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+/* 🌟 Content Styling */
+.user-manual-content {
+  text-align: center;
+  padding: 2rem 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00f2fe;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #a0aec0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 🌟 Section Styling */
+.manual-section {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0, 242, 254, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.manual-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 242, 254, 0.2);
+}
+
+.manual-section.active {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  color: #00f2fe;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::after {
+  content: '▼';
+  margin-left: auto;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.manual-section.active .section-title::after {
+  transform: rotate(180deg);
+}
+
+.manual-list {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  display: none;
+}
+
+.manual-section.active .manual-list {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 List Styling */
+.manual-list {
+  list-style: none;
+  padding: 0;
+}
+
+.manual-list li {
+  font-size: 1rem;
+  color: #e2e8f0;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.manual-list li strong {
+  color: #4facfe;
+  font-weight: 600;
+}
+
+/* 🌟 CTA Section */
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-link {
+  color: #00f2fe;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.cta-link:hover {
+  color: #4facfe;
+  text-decoration: underline;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .manual-section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle, .manual-list li {
+    font-size: 0.9rem;
+  }
+
+  .manual-section {
+    padding: 1rem;
+  }
+}

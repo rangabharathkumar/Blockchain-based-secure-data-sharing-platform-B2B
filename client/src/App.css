@@ -1,0 +1,365 @@
+/* Global Background and Container */
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Background Animation */
+.background-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  perspective: 1000px;
+}
+
+.cube {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(64, 144, 255, 0.1);
+  border: 1px solid rgba(64, 144, 255, 0.3);
+  animation: float 12s infinite;
+  backdrop-filter: blur(3px);
+  border-radius: 20px;
+}
+
+.cube:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: -2s;
+}
+
+.cube:nth-child(2) {
+  top: 70%;
+  left: 80%;
+  animation-delay: -4s;
+}
+
+.cube:nth-child(3) {
+  top: 50%;
+  left: 50%;
+  animation-delay: -6s;
+}
+
+.cube:nth-child(4) {
+  top: 80%;
+  left: 20%;
+  animation-delay: -8s;
+}
+
+.cube:nth-child(5) {
+  top: 10%;
+  left: 85%;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateZ(0) rotate(0deg);
+  }
+  25% {
+    transform: translateZ(100px) rotate(90deg);
+  }
+  50% {
+    transform: translateZ(0) rotate(180deg);
+  }
+  75% {
+    transform: translateZ(-100px) rotate(270deg);
+  }
+}
+
+/* Content Sections */
+section {
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+
+/* Container for file section */
+.container {
+  position: relative;
+  z-index: 3;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: rgba(15, 16, 35, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 242, 254, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.acc {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.share {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  color: #0d0e1c;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  margin-top: 1rem;
+}
+
+.share:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.middle-section {
+  width: 90%;
+  background-color: #f8f9fa;
+  padding: 0;
+}
+
+.file-section {
+  position: relative;
+  z-index: 4;
+  background-color: rgba(68, 42, 164, 0.9);
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.file-section p {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.account {
+  font-size: 80px;
+  color: white;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+h3, p {
+  margin-bottom: 0px;
+  color: #ccc;
+  font-size: 100px;
+}
+
+/* Modal Styles - Add if not already present */
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContainer {
+  position: relative;
+  z-index: 1001;
+  background: rgba(15, 16, 35, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Modern Background */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Animated Background Elements */
+.App::before,
+.App::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.15;
+  animation: float 10s infinite ease-in-out;
+}
+
+.App::before {
+  background: #00f2fe;
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.App::after {
+  background: #4facfe;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.navbar .wallet-btn {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+}
+
+.navbar .wallet-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+}
+
+.logo {
+  height: 40px;
+  filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.3));
+}
+
+.container {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: #00f2fe;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.no-metamask {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 78, 78, 0.1);
+  border: 1px solid rgba(255, 78, 78, 0.2);
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 242, 254, 0.1);
+  border-radius: 50%;
+  border-top-color: #00f2fe;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App::before,
+  .App::after {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .title {
+    font-size: 1.5em;
+  }
+  
+  .navbar {
+    padding: 0.8rem;
+  }
+  
+  .logo {
+    height: 30px;
+  }
+}

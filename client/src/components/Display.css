@@ -1,0 +1,274 @@
+.center {
+  position: relative;
+  z-index: 4;  /* Match file-section z-index */
+  margin: 10px;
+}
+
+/* Button Styling */
+.button {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  color: #0d0e1c;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+  margin: 1rem;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.4);
+}
+
+/* Centering the Enter Address Input */
+.input-container {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;  /* Makes sure it's centered on full screen height */
+}
+
+/* Input Field */
+.address {
+  display: block;
+  height: 40px;
+  width: 350px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  margin:auto;
+}
+
+.address:focus {
+  background-color: lightblue;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Modal Background */
+.modal {
+  position: fixed;
+  z-index: 1000;  /* Match modalBackground z-index */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* File List Grid */
+.file-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* File Item */
+.file-item {
+  background: rgba(15, 23, 42, 0.3);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.file-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
+  background: rgba(15, 23, 42, 0.5);
+  border-color: #00f2fe;
+}
+
+.file-icon {
+  font-size: 1.5rem;
+  color: #00f2fe;
+  transition: transform 0.3s ease;
+}
+
+.file-item:hover .file-icon {
+  transform: scale(1.1);
+}
+
+.file-name {
+  color: #ffffff;
+  font-size: 0.95rem;
+  word-break: break-all;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+.file-item:hover .file-name {
+  color: #00f2fe;
+}
+
+/* File Details */
+.file-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-icon-large {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.file-name-large {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* File Link */
+.file-link {
+  color: #00f2fe;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.file-link:hover {
+  color: #4facfe;
+}
+
+.search-section {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  background: rgba(15, 23, 42, 0.3);
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #00f2fe;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-button {
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  color: #0d0e1c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+}
+
+.loading {
+  text-align: center;
+  color: #00f2fe;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  text-align: center;
+  color: #ff4e4e;
+  background: rgba(255, 78, 78, 0.1);
+  border: 1px solid rgba(255, 78, 78, 0.2);
+  padding: 0.8rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.no-files {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+/* Update existing styles */
+.display-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.action-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.file-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
