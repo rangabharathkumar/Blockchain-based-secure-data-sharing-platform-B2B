@@ -9,8 +9,11 @@ typechain-types
 cache
 artifacts
 
-# Client build
+# Client specific ignores
 client/node_modules
 client/build
 client/.env
+!client/          # Ensure the client folder is included
+!client/src/**    # Add the entire source code folder
+!client/public/** # Add public files
 
