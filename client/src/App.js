@@ -37,7 +37,9 @@ function App() {
         const address = await signer.getAddress();
         console.log(address);
         setAccount(address);
-        let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+        
+        // Use the contract address from environment variable
+        const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
         const contract = new ethers.Contract(contractAddress, Upload.abi, signer);
         console.log(contract);
         setContract(contract);
