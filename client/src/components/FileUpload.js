@@ -4,7 +4,8 @@ import axios from "axios";
 import CryptoJS from "crypto-js";
 import "./FileUpload.css";
 
-const SECRET_KEY = "my_super_secret_key"; // Change this to a secure key
+const pinataApiKey = process.env.REACT_APP_PINATA_API_KEY;
+const pinataSecretApiKey = process.env.REACT_APP_PINATA_SECRET_API_KEY;
 
 const FileUpload = ({ contract, account }) => {
   const [file, setFile] = useState(null);
@@ -26,7 +27,7 @@ const FileUpload = ({ contract, account }) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        const encrypted = CryptoJS.AES.encrypt(reader.result, SECRET_KEY).toString();
+        const encrypted = CryptoJS.AES.encrypt(reader.result, process.env.REACT_APP_SECRET_KEY).toString();
         resolve(encrypted);
       };
       reader.onerror = (error) => reject(error);
@@ -46,8 +47,8 @@ const FileUpload = ({ contract, account }) => {
 
       const resFile = await axios.post("https://api.pinata.cloud/pinning/pinFileToIPFS", formData, {
         headers: {
-          pinata_api_key: `pinata api key`,
-          pinata_secret_api_key: `Your key`,
+          pinata_api_key: pinataApiKey,
+          pinata_secret_api_key: pinataSecretApiKey,
           "Content-Type": "multipart/form-data",
         },
       });
