@@ -1,102 +1,142 @@
-<<<<<<< HEAD
-# Sample Hardhat Project
+🛡️ Privex_3.0 – Decentralized Image Upload and Sharing
+Privex_3.0 is a decentralized application (dApp) that enables secure image upload and sharing on the blockchain. Users can upload images to IPFS (InterPlanetary File System) and share access with single or multiple people through Solidity smart contracts.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+🔥 This project includes local deployment using Hardhat for testing and development.
 
-Try running some of the following tasks:
+🌐 Live Demo
+👉 Hosted Website: https://rangabharathkumar.github.io/Privex_3.0/
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
-=======
-# Blockchain-based-secure-data-sharing-platform-B2B
-# Decentralized Image Upload and Sharing
+🌟 Features
+✅ Decentralized Storage:
 
-This project facilitates decentralized image upload and sharing on the blockchain using Solidity for the smart contract and React for the front-end interface. It enables users to securely upload images to IPFS (InterPlanetary File System) and share access with specified users through smart contract functionality.
+Images are uploaded to IPFS, ensuring immutable and censorship-resistant storage.
 
-Here is the video in English - [Decentralize Google Drive](https://youtu.be/M-KRLlHG_zs?si=rD7I-fH-P8kGiwwf)
+✅ Smart Contract Access Control:
 
-Here is the video in Hindi - [Decentralize Google Drive](https://youtu.be/fghqq3-P3x0?si=CVMpHFTW3-fa3R3A)
+Uses Solidity smart contracts to manage multi-user access permissions.
 
-## Features
+Users can grant or revoke access to single or multiple individuals simultaneously.
 
-- **Decentralized Storage:** Images are uploaded to IPFS, ensuring decentralized and immutable storage.
-- **Smart Contract:** Utilizes Solidity smart contracts on the Ethereum blockchain for access control and ownership management.
-- **Access Control:** Users can grant or revoke access to their uploaded images to specific individuals through the smart contract.
+✅ Permission-based Sharing:
 
-## Technologies Used
+Share with one or multiple users at once.
 
-- **Solidity:** Smart contract development for ownership and access control.
-- **React:** Front-end interface for uploading images and managing access.
-- **IPFS:** Decentralized storage protocol for hosting uploaded images.
+Flexible access management through the smart contract.
 
-## Usage
+✅ Ethereum Blockchain Integration:
 
-### Installation
+Uses Hardhat local network for testing and local deployment.
 
-1. Clone the repository:
+✅ React Frontend:
 
-   ```bash
-   git clone https://github.com/your-username/decentralized-image-upload.git
-   ```
-2. Install dependencies for the hardhat:
+Intuitive interface for uploading images, viewing stored content, and managing multi-user permissions.
 
-   ```bash
+⚙️ Technologies Used
+🛠️ Solidity: Smart contract development for multi-user access control.
+
+🌐 React: Frontend framework for UI and interaction.
+
+📦 IPFS: Decentralized storage protocol for image hosting.
+
+🔥 Hardhat: Ethereum development environment for local testing.
+
+🔗 MetaMask: Ethereum wallet for interacting with the dApp.
+
+🚀 Installation & Local Deployment
+✅ Clone the Repository
+   git clone https://github.com/rangabharathkumar/Privex_3.0.git
+✅ Install Dependencies
+1️⃣ Install Backend (Hardhat) Dependencies:
    # Navigate to the root directory
-   cd Dgdrive3.0
-   # Install hardhat dependencies
-   npm install
-   ```
-3. Compile the smart contract for artifacts:
+    cd Privex_3.0
 
-   ```bash
-   # Compile Smart Contract
-   npx hardhat compile
-   ```
-4. Deploy the Solidity smart contract to an Ethereum testnet or local development environment.
-   ```bash
-   # Deploy Smart Contract
-   npx hardhat run scripts/deploy.js --network <network-name>
-   ```
-5. Install dependencies for the React front end:
-   ```bash
-   # Navigate to the React client directory
-   cd client 
-   # Install React dependencies
-   npm install
-   ```
-6. Run the react application:
-   ```bash
-   # Start React Application
-   npm start
-   ```
-   
-### Configuration
+    # Install Hardhat dependencies
+    npm install
+2️⃣ Compile the Smart Contract:
 
-1. Set up environment variables:
+    # Compile the Smart Contract
+    npx hardhat compile
 
-   - Obtain API keys for Pinata to interact with IPFS.
-   - Update the React component (FileUpload.js) with your Pinata API keys.
-     
-### Usage
+    ✅ Local Deployment (Hardhat)
+1️⃣ Start the Local Hardhat Network:
 
-Once the setup and configuration are complete, follow these steps to utilize the decentralized image upload and sharing system:
+    # Run Hardhat local node
+     npx hardhat node
+📌 After Running:
 
-1. **Install Metamask:**
-   - Ensure Metamask is installed and configured in your browser for Ethereum interactions.
+  The local network will start with test accounts and their private keys.
 
-2. **Update Contract Address:**
-   - After smart contract deployment, make sure to update the contract address in `App.js` within the React application.
+   Take note of the contract owner’s private key for deployment.
 
-3. **Upload Image before "Get Data":**
-   - Click "Get Data" only after uploading an image on Pinata. Otherwise, it will throw an error stating "You don't have access".
+2️⃣ Deploy the Smart Contract:
+In another terminal window, run:
 
-4. **Accessing Other User Images:**
-   - Use the "Get Data" button to access other users' images. Input the user's address in the designated box, but remember, you can only access their images if they've granted you access through the smart contract. Otherwise, it will throw an error saying "You don't have access".
+    npx hardhat run scripts/deploy.js --network localhost
+📌 After Deployment:
 
-These steps will ensure smooth navigation and utilization of the system while maintaining access control and avoiding potential errors.
->>>>>>> b70874a2bd19b2acbe185fe6df16276b0bda4958
+   The terminal will display the contract address.
+
+   Copy the contract address for the frontend configuration.
+
+✅ Frontend (React) Setup
+1️⃣ Install React Dependencies:
+
+    # Navigate to the React client directory
+    cd client
+
+# Install React dependencies
+    npm install
+2️⃣ Configure Environment Variables:
+     Create a .env file in the client/ directory.
+
+Add the following:
+
+    REACT_APP_PINATA_API_KEY=YOUR_PINATA_API_KEY
+    REACT_APP_PINATA_SECRET_API_KEY=YOUR_PINATA_SECRET_KEY
+    REACT_APP_CONTRACT_ADDRESS=YOUR_CONTRACT_ADDRESS
+    REACT_APP_LOCAL_RPC_URL=http://127.0.0.1:8545
+3️⃣ Start the React Application:
+    npm start
+
+    
+🔥 Usage
+✅ Install MetaMask
+   Install and configure MetaMask in your browser.
+
+   Import one of the Hardhat local network accounts into MetaMask using its private key.
+
+   Connect to the Localhost 8545 network.
+
+✅ Upload Image
+   Click Upload to select an image from your device.
+
+   The image is stored on IPFS and the CID (content ID) is saved on the blockchain.
+
+✅ Share with Single or Multiple Users
+   Use the Share button to grant access.
+
+   Enter multiple Ethereum addresses separated by commas to share with multiple users at once.
+
+   Click Grant Access to allow viewing permissions.
+
+✅ Revoke Access
+   Use the Revoke button to remove access.
+
+   Enter one or multiple addresses to revoke their access rights.
+
+✅ View Shared Images
+   Click Get Data to view images shared by other users.
+
+   You will only be able to access images if you have the appropriate permissions.
+
+📌 Example Workflow
+   Alice uploads an image and grants access to Bob and Charlie.
+
+   Bob and Charlie can view the image.
+
+   Alice revokes Charlie’s access, preventing him from viewing the image.
+
+   Bob can still access the image, but Charlie cannot.
+
+Google drive link for demo video: https://drive.google.com/drive/folders/1ZR0DDBX0Zop1DE0fk6kXiR7xcM6Rlhnv?usp=sharing
+
